@@ -1,0 +1,178 @@
+/* =========================================
+   VARIABLES Y RESET
+   ========================================= */
+:root {
+    --guinda: #800000;
+    --beige: #fdfdc8;
+    --blanco: #ffffff;
+    --negro: #1a1a1a;
+    --gris-claro: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--beige);
+    color: var(--negro);
+}
+
+/* =========================================
+   HEADER (RESPONSIVE)
+   ========================================= */
+.main-header {
+    background-color: var(--guinda);
+    display: flex;
+    justify-content: space-between; /* Empuja logo a la izq y nav a la der */
+    align-items: center;           /* Centra todo verticalmente */
+    padding: 10px 5%;              /* Espacio interno */
+    min-height: 80px;
+}
+
+/* Contenedor del Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px;       /* Ajusta esto para que el logo se vea bien */
+    width: auto;
+    display: block;
+}
+
+.logo-img:hover {
+    transform: scale(1.1); /* Efecto sutil al pasar el mouse */
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+/* Menú de Navegación */
+.main-header nav ul {
+    list-style: none;
+    display: flex;      /* IMPORTANTE: Pone los <li> en fila */
+    margin: 0;
+    padding: 0;
+    gap: 20px;          /* Espacio entre cada botón */
+}
+/* Enlaces del Menú */
+.main-header nav ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+    white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+}
+.main-header nav ul li a:hover {
+    color: var(--beige);
+}
+.main-header a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.main-header a:hover {
+    color: var(--beige);
+    text-decoration: underline;
+}
+.a{
+align-items: left;
+}
+/* =========================================
+   CONTENIDO Y DISEÑO
+   ========================================= */
+.content {
+    padding: 20px 5%; /* Padding flexible según el ancho */
+    min-height: 70vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: var(--guinda);
+}
+
+/* Tarjetas de Publicidad / Cursos */
+.curso-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna en móvil */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.curso-card {
+    background: var(--blanco);
+    border-left: 5px solid var(--guinda); /* Detalle elegante en guinda */
+    padding: 20px;
+    width: 20%; /* Ancho fijo para tarjetas en PC */
+    height: 20%; /* Altura fija para tarjetas en PC */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.main-footer {
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 30px 5%;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   MEDIA QUERIES (EL MÁGICO RESPONSIVE)
+   ========================================= */
+
+/* Tablets y Laptops (Pantallas mayores a 768px) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* En celular se ponen uno arriba de otro */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    .main-header nav {
+        margin-top: 20px;
+    }
+    .main-header nav ul {
+        justify-content: center;
+        flex-wrap: wrap; /* Si no caben, bajan a la siguiente fila */
+    }
+
+    .curso-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas automáticas */
+    }
+
+    .content {
+        padding: 40px 10%;
+    }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1200px) {
+    .content {
+        max-width: 1200px;
+        margin: 0 auto; /* Centra el contenido en pantallas gigantes */
+    }
+}

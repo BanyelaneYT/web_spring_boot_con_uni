@@ -1,0 +1,102 @@
+/* =========================================
+   ESTILOS PARA LA PÁGINA DE COMUNIDAD
+   ========================================= */
+
+.intro-comunidad {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro-comunidad h1 {
+    color: var(--guinda);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+/* Sistema de Galería */
+.galeria-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.galeria-item {
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Placeholder para fotos reales luego */
+.img-placeholder {
+    background-color: var(--negro);
+    color: var(--beige);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-bottom: 4px solid var(--guinda);
+}
+
+.info-item {
+    padding: 20px;
+}
+
+.info-item h3 {
+    color: var(--guinda);
+    margin-bottom: 10px;
+}
+
+/* Caja de Acción para Público General */
+.info-publico {
+    margin-top: 60px;
+    background-color: var(--guinda);
+    color: var(--blanco);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.info-box h2 {
+    margin-bottom: 15px;
+}
+
+.btn-visita {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: var(--beige);
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn-visita:hover {
+    background-color: var(--blanco);
+    transform: scale(1.05);
+}
+
+/* =========================================
+   RESPONSIVE PARA COMUNIDAD
+   ========================================= */
+
+@media (min-width: 992px) {
+    .galeria-grid {
+        flex-direction: row; /* En PC se ponen uno al lado del otro */
+    }
+
+    .galeria-item {
+        flex: 1;
+    }
+
+    .img-placeholder {
+        height: 250px;
+    }
+}
